@@ -1,0 +1,71 @@
+<!--
+  Generated template for the SecClaseCrearCodigoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Crear Código de Curso</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="myForm">
+    <ion-grid>
+        <ion-row >
+          <ion-col>
+              <div class="row">
+                  <div class="col">
+                      <div class="text-center">
+                          <ion-label color="primary" style="text-align: center;">
+                              ¿Quieres crear un código?
+                          </ion-label>
+                          <ion-label color="primary" style="text-align: center;">
+                            Ingresa los datos y compártelo en clase
+                          </ion-label>
+                      </div>
+                  </div>
+              </div> 
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+              <ion-label>
+                  Nombre del Curso
+              </ion-label>              
+              <ion-item>
+                <ion-input placeholder="Ej.: Compiladores 2" clearInput
+                name="curso" formControlName="curso" maxlength="30"></ion-input>
+              </ion-item>
+              <p color="danger" ion-text *ngIf="myForm.get('curso').hasError('minlength')">Ingrese mínimo 5 caracteres</p>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+              <ion-label>
+                  Sección
+              </ion-label>              
+              <ion-item>
+                <ion-input placeholder="Ej.: A-" clearInput
+                name="seccion" formControlName="seccion" maxlength="2"></ion-input>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+            <div text-center>
+              <br/>
+              <button ion-button outline color="primary"(click)="registrarCodigo()"
+              [disabled]="myForm.invalid">
+                Generar Código
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

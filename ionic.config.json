@@ -1,0 +1,7 @@
+{
+  "name": "AlertasUSAC",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

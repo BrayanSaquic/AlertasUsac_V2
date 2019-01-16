@@ -1,0 +1,71 @@
+<!--
+  Generated template for the SecObjetosIngresoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reporte de Objeto Perdido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="myForm">
+    <ion-grid>
+        <ion-row >
+          <ion-col>
+              <div class="row">
+                  <div class="col">
+                      <div class="text-center">
+                          <ion-label color="primary" style="text-align: center;">
+                              ¿Encontraste algún objeto perdido?
+                          </ion-label>
+                          <ion-label color="primary" style="text-align: center;">
+                            Por favor ayúdanos reportándolo
+                          </ion-label>
+                      </div>
+                  </div>
+              </div> 
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+              <ion-label>
+                  Descripción de la situación:
+              </ion-label>
+              <ion-label>
+                  (Indica también dónde dejaste lo encontrado)
+              </ion-label>
+              
+              <ion-item>
+                <ion-textarea placeholder="Ingrese la descripción"
+                name="descripcion" formControlName="descripcion" maxlength="200"></ion-textarea>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+              <ion-label>
+                Puedes adjuntar una imagen:
+              </ion-label>
+              <button ion-button (click)="openGallery()">Buscar Imagen</button>
+              <img [src]="base64Image" *ngIf="base64Image"/>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+            <div text-center>
+              <button ion-button outline color="primary" (click)="uploadImage()"
+              [disabled]="myForm.invalid">
+                Enviar Información
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    </form>
+</ion-content>
